@@ -9,7 +9,7 @@ var bio = {
         "location": "Newport News, VA"
       },
       "welcomeMessage": "Front-end dev, multimedia dev, and so much more!",
-      "skills": ["HTML","CSS","JavaScript"],
+      "skills": ["HTML","CSS","JavaScript","Git","Photoshop", "Flash", "SCORM 2004", "Node", "Angular", "Socket.io", "Express"],
       "biopic": "img/fry.jpg",
       "display" : function(){
         $('#header').prepend(HTMLheaderName.replace("%data%", this.name));
@@ -19,6 +19,11 @@ var bio = {
         $('#topContacts').append(HTMLgithub.replace("%data%", this.contacts.github));
         $('#topContacts').append(HTMLtwitter.replace("%data%", this.contacts.twitter));
         $('#topContacts').append(HTMLlocation.replace("%data%", this.contacts.location));
+        $('#footerContacts').append(HTMLmobile.replace("%data%", this.contacts.mobile));
+        $('#footerContacts').append(HTMLemail.replace("%data%", this.contacts.email));
+        $('#footerContacts').append(HTMLgithub.replace("%data%", this.contacts.github));
+        $('#footerContacts').append(HTMLtwitter.replace("%data%", this.contacts.twitter));
+        $('#footerContacts').append(HTMLlocation.replace("%data%", this.contacts.location));
         $('#header').append(HTMLbioPic.replace("%data%", this.biopic));
         $('#header').append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
         if(this.skills.length > 0){
@@ -76,7 +81,15 @@ var bio = {
           "images" : [
             "img/197x148.gif"
           ]
-        }
+        },
+        {
+          "title" : "About Me",
+          "dates" : "2015",
+          "description" : "About me page for P0 of my Udacity FED Nanodegree",
+          "images" : [
+            "img/197x148.gif"
+          ]
+        },
       ],
       "display" : function(){
         for(var project in this.projects){
@@ -87,7 +100,7 @@ var bio = {
           for(var img in this.projects[project].images){
             _project.append(HTMLprojectImage.replace("%data%", this.projects[project].images[img]));
           }
-          $('#projects').append(_project);
+          $('#projectsContainer').append(_project);
         }
       }
     },
@@ -109,6 +122,14 @@ var bio = {
           "majors" : ["Business Administration"],
           "dates" : 2008,
           "url" : "http://cnu.edu"
+        },
+        {
+          "name" : "George C. Marshall High School",
+          "location" : "Falls Church, VA",
+          "degree" : "HS",
+          "majors" : ["N/A"],
+          "dates" : 2004,
+          "url" : "http://www.fcps.edu/marshallhs"
         }
       ],
       "onlineCourses" : [
@@ -156,6 +177,9 @@ work.display();
 projects.display();
 education.display();
 
+/*
+* Don't need the internationalize button from the course for the project
 $('#main').append(internationalizeButton);
+*/
 
 $('#mapDiv').append(googleMap);
