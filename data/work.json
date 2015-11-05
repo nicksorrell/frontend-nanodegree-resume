@@ -1,0 +1,12 @@
+{
+  "jobs" : [
+      {
+        "employer" : "",
+        "title" : "",
+        "location" : "",
+        "dates": "",
+        "description": ""
+      }
+    ],
+  "display" : null
+}

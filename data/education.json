@@ -1,0 +1,29 @@
+{
+  "schools": [
+    {
+      "name" : "Virginia Commonwealth University",
+      "location" : "Richmond, VA",
+      "degree" : "MS",
+      "majors" : ["Mass Communications"],
+      "dates" : 2011,
+      "url" : "http://vcu.edu"
+    },
+    {
+      "name" : "Christoper Newport University",
+      "location" : "Newport News, VA",
+      "degree" : "BS",
+      "majors" : ["Business Administration"],
+      "dates" : 2008,
+      "url" : "http://cnu.edu"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "title" : "Front-end Development Nanodegree",
+      "school" : "Udacity",
+      "date" : 2016,
+      "url" : "http://udacity.com"
+    }
+  ],
+  "display" : null
+}
