@@ -9,8 +9,10 @@ var bio = {
         "location": "Newport News, VA"
       },
       "welcomeMessage": "Front-end dev, multimedia dev, and so much more!",
-      "skills": ["HTML","CSS","JavaScript","Git","Photoshop", "Flash", "SCORM 2004", "Node", "Angular", "Socket.io", "Express"],
-      "biopic": "img/fry.jpg",
+      "skills": [
+        ["HTML", 15], ["CSS", 15], ["JavaScript", 10], ["Git", 5], ["Photoshop", 5], ["Flash", 5], ["SCORM 2004", 5], ["Node", 3], ["Express", 3], ["Socket.io", 2]
+      ],
+      "biopic": "img/me.jpg",
       "display" : function(){
         $('#header').prepend(HTMLheaderName.replace("%data%", this.name));
         $('#name').after(HTMLheaderRole.replace("%data%", this.role));
@@ -29,7 +31,9 @@ var bio = {
         if(this.skills.length > 0){
             $('#header').append(HTMLskillsStart);
             for(var skill in this.skills){
-              $('#skills').append(HTMLskills.replace('%data%', this.skills[skill]));
+              var skillEntry = HTMLskills.replace('%data%', this.skills[skill][0]);
+              skillEntry = skillEntry.replace('%data2%', this.skills[skill][1] + "+ yrs. exp.")
+              $('#skills').append(skillEntry);
             }
         }
       }
@@ -42,14 +46,21 @@ var bio = {
             "title" : "Senior Software Architect",
             "location" : "Newport News, VA",
             "dates": "2015-Present",
-            "description": "Long description of all the fine work I do for Army Training Support Center's TCM-TADLP after my sweet promotion!"
+            "description": "See below, except now with sweet promotion!"
           },
           {
             "employer" : "JANUS Research Group",
             "title" : "Managed Systems Engineer",
             "location" : "Newport News, VA",
             "dates": "2013-2015",
-            "description": "Long description of all the fine work I do for Army Training Support Center's TCM-TADLP before my promotion."
+            "description": "Ongoing work performed on location at Joint Base Langley-Eustis in support of U.S. Army TRADOC Capabilities Manager - The Army Distributed Learning Program (TCM-TADLP). Responsibilities include provision of diagnostic, advisement, research, and technical support services for various U.S. Army distance learning products to address technical concerns and ensure optimal end-user experiences."
+          },
+          {
+            "employer" : "Planning and Learning Technologies, Inc.",
+            "title" : "Development Lead",
+            "location" : "Newport News, VA",
+            "dates": "2011-2013",
+            "description": "Work performed across multiple projects under the DLETP and CAPDL contract vehicles; clients include U.S. Army Judge Advocate General Corps, and Defense Language Institute. Responsibilities include management of development staff efforts; multimedia development, SCORM programming, web programming, and job aid development; and collaboration with project manager, instructional systems designers and subject matter experts to develop SCORM® and Section 508-compliant interactive multimedia training and simulation solutions."
           }
         ],
       "display" : function(){
@@ -71,7 +82,7 @@ var bio = {
           "dates" : "2015",
           "description" : "Interactive Resume for my Udacity FED Nanodegree",
           "images" : [
-            "img/197x148.gif"
+            "img/resume.jpg"
           ]
         },
         {
@@ -79,7 +90,7 @@ var bio = {
           "dates" : "2015",
           "description" : "Mockup of my portfolio for P1 of my Udacity FED Nanodegree",
           "images" : [
-            "img/197x148.gif"
+            "img/portfolio.jpg"
           ]
         },
         {
@@ -87,7 +98,7 @@ var bio = {
           "dates" : "2015",
           "description" : "About me page for P0 of my Udacity FED Nanodegree",
           "images" : [
-            "img/197x148.gif"
+            "img/about.jpg"
           ]
         },
       ],
